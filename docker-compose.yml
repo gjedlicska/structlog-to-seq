@@ -1,0 +1,8 @@
+version: '3'
+services:
+  docker-gelf-test:
+    build: .
+    logging:
+      driver: gelf
+      options:
+        gelf-address: "udp://localhost:12201"
