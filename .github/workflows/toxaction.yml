@@ -1,4 +1,4 @@
-name: Run Tox testing, linting 
+name: Run Tox testing, linting
 
 on: [push]
 
@@ -17,11 +17,11 @@ jobs:
       uses: actions/setup-python@v1
       with:
         python-version: ${{ matrix.python-version }}
-    
+
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
         pip install tox tox-gh-actions
-    
+
     - name: Run tox actions
       run: tox
