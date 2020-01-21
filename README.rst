@@ -21,8 +21,8 @@ Demo
 To run a demo:
 
 * Run the SEQ server and gelf udp ingestion container with: ``docker-compose -f seq_test_server/docker-compose.yml up -d``
-* Run the demo app with: ``docker-compose -up -d ``
-* Open `Seq <localhost>`_
+* Run the demo app with: ``docker-compose -up -d``
+* Open `Seq <http://localhost>`_
 
 
 Goals
