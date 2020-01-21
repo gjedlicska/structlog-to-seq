@@ -9,7 +9,7 @@ COPY poetry.lock pyproject.toml /
 RUN poetry install
 
 COPY structlog_to_seq /structlog_to_seq
-COPY tests/structlog_example.py /structlog_example.py
+COPY structlog_example.py /structlog_example.py
 
 
 ENV PYTHONPATH /
