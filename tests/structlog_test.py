@@ -31,13 +31,16 @@ if __name__ == '__main__':
 
     log = structlog.get_logger()
 
-    # log.debug("this is debug")
-    # log.info("this is info")
-    # log.warn("this is warning")
+    log.info("Great news, you can use {log_solution} with SEQ server", log_solution="structlog")
+    log.debug("This is debug message created using {log_solution} and processes by {processor}",
+              log_solution="structlog", log_version=structlog.__version__, processor="structlog_2_seq")
 
+    key_im_looking_for = "foo"
     try:
         v = {}
-        val = v["foo"]
+        val = v[key_im_looking_for]
 
     except KeyError as ke:
-        log.fatal("error", exc_info=ke)
+        log.error("Did not find the key I'm looking for", key_im_looking_for=key_im_looking_for, exc_info=ke)
+
+    log.info("Move along...")
