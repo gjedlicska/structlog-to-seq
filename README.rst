@@ -18,10 +18,17 @@ For local development, instead of rendering an event to JSON, the CLEF renderer 
 
 Demo
 ----
-To run a demo:
 
-* Run the SEQ server and gelf udp ingestion container with: ``docker-compose -f seq_test_server/docker-compose.yml up -d``
-* Run the demo app with: ``docker-compose -up -d``
+Prerequisites
+*************
+* `Docker <https://docs.docker.com/get-started/>`_
+* `Docker-compose <https://docs.docker.com/compose/>`_
+
+Run the demo
+************
+
+* Run the SEQ server: ``docker-compose -f seq_test_server/docker-compose.yml up -d``
+* Run the demo script: ``docker-compose -up -d``
 * Open `Seq <http://localhost>`_
 
 
