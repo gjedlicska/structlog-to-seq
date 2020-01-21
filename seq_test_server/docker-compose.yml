@@ -9,7 +9,7 @@ services:
     environment:
       SEQ_ADDRESS: "http://seq:5341"
     restart: unless-stopped
- 
+
   seq:
     image: datalust/seq:latest
     ports:

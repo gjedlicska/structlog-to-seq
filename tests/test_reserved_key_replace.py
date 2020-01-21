@@ -1,6 +1,6 @@
-from structlog_to_seq import CelfProcessor
-
 import pytest
+
+from structlog_to_seq import CelfProcessor
 
 
 @pytest.fixture
@@ -30,8 +30,12 @@ result_dictionaries = [
 ]
 
 
-@pytest.mark.parametrize("input_dict, result_dict", zip(input_dictionaries, result_dictionaries))
-def test_reserved_key_replace_in_dict(input_dict: dict, result_dict: dict, celf_processor: CelfProcessor):
+@pytest.mark.parametrize(
+    "input_dict, result_dict", zip(input_dictionaries, result_dictionaries)
+)
+def test_reserved_key_replace_in_dict(
+    input_dict: dict, result_dict: dict, celf_processor: CelfProcessor
+):
 
     replace_result = celf_processor._replace_reserved_keys(input_dict)
     assert result_dict == replace_result

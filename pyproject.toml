@@ -5,22 +5,62 @@ description = "A collection of structlog processors for using structlog with Seq
 authors = ["Gergő Jedlicska <gergo@jedlicska.com>"]
 license = "MIT"
 
+
 [tool.poetry.dependencies]
 python = "^3.6"
+
 
 [tool.poetry.dev-dependencies]
 pytest = "~5"
 tox = "^3.14.3"
 structlog = "^19.2.0"
 coverage = {extras = ["toml"], version = "^5.0.3"}
+black = "^19.10b0"
+isort = "^4.3.21"
+flake8 = "^3.7.9"
+pre-commit = "^1.21.0"
+
+
+[tool.black]
+line-length = 88
+target-version = ['py36', 'py37', 'py38']
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.eggs
+  | \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | _build
+  | buck-out
+  | build
+  | dist
+)/
+'''
+
+
+[tool.isort]
+multi_line_output=3
+include_trailing_comma=true
+force_grid_wrap=0
+use_parentheses=true
+line_length=88
+lines_after_imports=2
+lines_between_types=1
+known_third_party=["pytest", "structlog"]
+
 
 [tool.coverage.run]
 parallel = true
 branch = true
 source = ["structlog_to_seq"]
 
+
 [tool.coverage.paths]
 source = ["structlog_to_seq", ".tox/*/site-packages"]
+
 
 [tool.coverage.report]
 show_missing = true

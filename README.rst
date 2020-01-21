@@ -1,4 +1,8 @@
-Motivation  
+.. image:: https://img.shields.io/badge/code%20style-black-000000.svg
+   :target: https://github.com/psf/black
+   :alt: Code style: black
+
+Motivation
 ----------
 
 The main motivation for the project is to be able to create containerized python applications using structlog
@@ -8,8 +12,8 @@ Keeping in mind the Twelve Factor App's guide on logging: https://12factor.net/l
 Use case
 --------
 
-Application and package logs are collected and formatted with a structlog formatter chain, 
-where the structlog_seq_formatters are added towards the end of the chain. 
+Application and package logs are collected and formatted with a structlog formatter chain,
+where the structlog_seq_formatters are added towards the end of the chain.
 For docker container based applications using structlog JsonRenderer as the final formatter is sufficient,
 after that, docker's GELF log-driver forwards the event to the Seq server, thus the application only logs to stdout.
 Docker gelf docs: https://docs.docker.com/config/containers/logging/gelf/
@@ -28,7 +32,7 @@ Run the demo
 ************
 
 * Run the SEQ server: ``docker-compose -f seq_test_server/docker-compose.yml up -d``
-* Run the demo script: ``docker-compose -up -d``
+* Run the demo script: ``docker-compose -up``
 * Open `Seq <http://localhost>`_
 
 
@@ -37,8 +41,8 @@ Goals
 
 - [ ] a formatter implementation that can be added to the structlog formatter chain. Its purpose is
       to convert the event dictionary to the CLEF format.
-- [ ] a formatter that adds renderings for the message template tokens, ie.: round float values. 
-      A basic rendering should be to call __str__() on the object. 
+- [ ] a formatter that adds renderings for the message template tokens, ie.: round float values.
+      A basic rendering should be to call __str__() on the object.
       This implementation should take type specific formatters as external dependencies.
 - [ ] a renderer implementation that can be added to the end of the formatter chain, that provides readable
       rendered format from CLEF. This is mainly useful for local testing.
@@ -49,7 +53,7 @@ Ideas
 - [ ] Exception message formatter, where the exception object itself can be the body of the message. or it is part of a
       message template. Take some form of string representation of the exception, and add traceback as exc_info to the
       event dict.
-      
+
 Not in scope
 ------------
 
