@@ -4,3 +4,5 @@
 .coverage
 .tox
 htmlcov
+*.pyc
+*__pycache__*
