@@ -16,6 +16,15 @@ Docker gelf docs: https://docs.docker.com/config/containers/logging/gelf/
 
 For local development, instead of rendering an event to JSON, the CLEF renderer can be used.
 
+Demo
+----
+To run a demo:
+
+* Run the SEQ server and gelf udp ingestion container with: ``docker-compose -f seq_test_server/docker-compose.yml up -d``
+* Run the demo app with: ``docker-compose -up -d ``
+* Open `Seq <localhost>`_
+
+
 Goals
 -----
 
