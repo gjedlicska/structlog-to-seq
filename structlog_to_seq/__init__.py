@@ -1,3 +1,3 @@
 __version__ = '0.1.0'
 
-from .abs_formatter import CelfProcessor
+from .celf_processor import CelfProcessor
