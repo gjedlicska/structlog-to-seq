@@ -11,11 +11,12 @@ sent to a Seq server.
 Keeping in mind the Twelve Factor App's guide on logging: https://12factor.net/logs.
 
 Obstacles to overcome:
+
 * If using Seq's official logging solution `seqlog <https://seqlog.readthedocs.io/>`_
-  you have to rely on the full robust solution, with logging, handlers and a server.
-  This makes logging too robust for my taste.
-* with containerized python applications using structlog
-for creating log entries, and Seq server ingesting log events.
+you have to rely on the full robust solution, with logging, handlers and a server.
+This makes logging too robust for my taste.
+* with containerized python applications using structlog for creating log entries,
+and Seq server ingesting log events.
 
 Use case
 --------
@@ -41,7 +42,7 @@ Run the demo
 
 * Run the SEQ server: ``docker-compose -f seq_test_server/docker-compose.yml up -d``
 * Run the demo script: ``docker-compose -up``
-* Open `Seq <http://localhost>`_
+* Open local `Seq server <http://localhost>`_
 
 
 Goals

@@ -1,4 +1,4 @@
-from structlog_to_seq.abs_formatter import AbsProcessor
+from structlog_to_seq.abs_processor import AbsProcessor
 
 
 class CelfProcessor(AbsProcessor):
@@ -71,7 +71,9 @@ class CelfProcessor(AbsProcessor):
 
                 event: str = input_dict.get(self.__event_keyword, None)
                 if event:
-                    event.replace(reserved_key, new_key)
+                    input_dict[self.__event_keyword] = event.replace(
+                        reserved_key, new_key
+                    )
 
         return input_dict
 
