@@ -405,6 +405,20 @@ testing = ["freezegun (>=0.3.11,<1)", "pathlib2 (>=2.3.3,<3)", "pytest (>=4.0.0,
 
 [[package]]
 category = "dev"
+description = "Seamless integration of tox into GitHub Actions"
+name = "tox-gh-actions"
+optional = false
+python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,>=2.7"
+version = "0.3.0"
+
+[package.dependencies]
+tox = ">=3.12.2"
+
+[package.extras]
+testing = ["pytest (>=4.0.0,<6)", "pytest-randomly (>=3)"]
+
+[[package]]
+category = "dev"
 description = "a fork of Python 2 and 3 ast modules with type comment support"
 name = "typed-ast"
 optional = false
@@ -448,7 +462,7 @@ docs = ["sphinx", "jaraco.packaging (>=3.2)", "rst.linker (>=1.9)"]
 testing = ["pathlib2", "contextlib2", "unittest2"]
 
 [metadata]
-content-hash = "16b1d21242a2bb70c79325d2e43dea660e63f7b2b2f10abba14ace9c8fada436"
+content-hash = "90a6bd71df70f2a3310fb874348f7a00412a5f4fb155b6aa2fa1b009dec2e72f"
 python-versions = "^3.6"
 
 [metadata.files]
@@ -644,6 +658,10 @@ toml = [
 tox = [
     {file = "tox-3.14.3-py2.py3-none-any.whl", hash = "sha256:806d0a9217584558cc93747a945a9d9bff10b141a5287f0c8429a08828a22192"},
     {file = "tox-3.14.3.tar.gz", hash = "sha256:06ba73b149bf838d5cd25dc30c2dd2671ae5b2757cf98e5c41a35fe449f131b3"},
+]
+tox-gh-actions = [
+    {file = "tox-gh-actions-0.3.0.tar.gz", hash = "sha256:f943d9a7009d97ed1aac1b0051b3eef97b07176bc040a2307de9461629fcdf88"},
+    {file = "tox_gh_actions-0.3.0-py2.py3-none-any.whl", hash = "sha256:202c23c7de04f060d956961c65bfabcb6a13f08321225a05f902470b1a3e824a"},
 ]
 typed-ast = [
     {file = "typed_ast-1.4.1-cp35-cp35m-manylinux1_i686.whl", hash = "sha256:73d785a950fc82dd2a25897d525d003f6378d1cb23ab305578394694202a58c3"},
