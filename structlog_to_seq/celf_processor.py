@@ -1,3 +1,5 @@
+from typing import Dict
+
 from structlog_to_seq.abs_formatter import AbsProcessor
 
 
@@ -59,7 +61,7 @@ class CelfProcessor(AbsProcessor):
         "renderings": "@r",
     }
 
-    def _replace_reserved_keys(self, input_dict: dict) -> dict:
+    def _replace_reserved_keys(self, input_dict) -> Dict[str, object]:
 
         for reserved_key in self.__structlog_to_celf_mapper.values():
             value_with_reserved_key = input_dict.pop(reserved_key, None)
@@ -77,7 +79,8 @@ class CelfProcessor(AbsProcessor):
 
     def _translate_keys(self, input_dict: dict) -> dict:
         translated_dict = {
-            self.__structlog_to_celf_mapper.get(k, k): v for k, v in input_dict.items()
+            self.__structlog_to_celf_mapper.get(k, k): v
+            for k, v in input_dict.items()
         }
         return translated_dict
 
