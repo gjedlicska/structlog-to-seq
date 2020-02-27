@@ -8,4 +8,4 @@ class AbsProcessor(metaclass=ABCMeta):
 
     @abstractmethod
     def __call__(self, logger, name, event_dict) -> Any:
-        pass
+        raise NotImplementedError

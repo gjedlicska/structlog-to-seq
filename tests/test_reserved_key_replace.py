@@ -3,11 +3,6 @@ import pytest
 from structlog_to_seq import CelfProcessor
 
 
-@pytest.fixture
-def celf_processor() -> CelfProcessor:
-    return CelfProcessor()
-
-
 def dummy_value() -> str:
     return "value"
 
@@ -18,6 +13,11 @@ input_dictionaries = [
     {"@l": dummy_value()},
     {"@x": dummy_value()},
     {"@r": dummy_value()},
+    {
+        "@t": dummy_value(),
+        "@mt": dummy_value(),
+        "event": "sample {@t} message {@mt} with reserved key {@t}",
+    },
 ]
 
 
@@ -27,6 +27,11 @@ result_dictionaries = [
     {"_@l": dummy_value()},
     {"_@x": dummy_value()},
     {"_@r": dummy_value()},
+    {
+        "_@t": dummy_value(),
+        "_@mt": dummy_value(),
+        "event": "sample {_@t} message {_@mt} with reserved key {_@t}",
+    },
 ]
 
 
