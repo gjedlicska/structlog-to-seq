@@ -29,7 +29,6 @@ class CelfRenderer(AbsProcessor):
     @classmethod
     def _render_message_template(cls, event_dict: dict) -> str:
         """
-
         """
         message = event_dict[CelfKeywords.MessageTemplate.value]
 

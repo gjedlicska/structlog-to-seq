@@ -8,7 +8,7 @@ class MockTimestamper(AbsProcessor):
         self._timestamp = datetime.datetime.now().isoformat()
 
     @property
-    def timestamp(self) -> datetime.datetime:
+    def timestamp(self) -> str:
         return self._timestamp
 
     def __call__(self, _, __, event_dict) -> dict:
