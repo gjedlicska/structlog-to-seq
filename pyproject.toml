@@ -55,7 +55,7 @@ use_parentheses=true
 line_length=88
 lines_after_imports=2
 lines_between_types=1
-known_third_party=["pytest", "structlog"]
+known_third_party=["pytest", "structlog", "structlog_to_seq"]
 
 
 [tool.coverage.run]
