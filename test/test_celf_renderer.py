@@ -47,3 +47,23 @@ render_data = [
 def test_render_message_template(celf_renderer, event_dict, expected_message):
 
     assert expected_message == celf_renderer._render_message_template(event_dict)
+
+
+def tests_render_tokens(celf_renderer: CelfRenderer) -> None:
+    class MockClass:
+        def __str__(self):
+            return "{class: mocked}"
+
+    event_dict = {
+        "@mt": "{foo} message {template}.",
+        "template": MockClass(),
+        "foo": 123,
+    }
+
+    rendered_dict = celf_renderer._render_tokens(event_dict)
+
+    assert rendered_dict == {
+        "@mt": "{foo} message {template}.",
+        "template": "{class: mocked}",
+        "foo": "123",
+    }
