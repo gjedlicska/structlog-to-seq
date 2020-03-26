@@ -2,7 +2,13 @@
 .python-version
 .idea
 .coverage
+.coverage.*
 .tox
 htmlcov
 *.pyc
 *__pycache__*
+
+.mypy_cache
+.vscode
+.pytest_cache
+dist*

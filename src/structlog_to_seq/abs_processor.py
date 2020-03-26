@@ -3,7 +3,7 @@ from typing import Any
 
 
 class AbsProcessor(metaclass=ABCMeta):
-    def __init__(self):
+    def __init__(self) -> None:
         pass
 
     @abstractmethod
