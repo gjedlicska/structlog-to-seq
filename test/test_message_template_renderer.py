@@ -8,9 +8,14 @@ def message_template_renderer() -> MessageTemplateRenderer:
     return MessageTemplateRenderer()
 
 
-def test_celf_renderer_no_message_template_error(message_template_renderer):
+def test_message_template_renderer_no_message_template_error(message_template_renderer):
     with pytest.raises(ValueError):
         message_template_renderer(None, None, {"message": "without_template"})
+
+
+def test_not_string_token_raises_value_erro(message_template_renderer):
+    with pytest.raises(ValueError):
+        message_template_renderer._render_message_template({"event": 123})
 
 
 def test_key_replace(message_template_renderer):
@@ -61,6 +66,7 @@ def tests_render_tokens(message_template_renderer: MessageTemplateRenderer) -> N
         "event": "{foo} message {template}.",
         "template": MockClass(),
         "foo": 123,
+        "exception": "Something wrong",
     }
 
     rendered_dict = message_template_renderer._render_tokens(event_dict)
@@ -69,4 +75,7 @@ def tests_render_tokens(message_template_renderer: MessageTemplateRenderer) -> N
         "event": "{foo} message {template}.",
         "template": "\x1b[4m{class: mocked}\x1b[24m\x1b[26m",
         "foo": "\x1b[4m123\x1b[24m\x1b[26m",
+        "exception": (
+            "\x1b[1m\x1b[38;2;220;50;47mSomething wrong\x1b[22m\x1b[39m\x1b[26m"
+        ),
     }
