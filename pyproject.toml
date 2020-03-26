@@ -27,6 +27,7 @@ mypy = "^0.761"
 rope = "^0.16.0"
 colorama = "^0.4.3"
 colorful = "^0.5.4"
+pytest-cov = "^2.8.1"
 
 
 [tool.poetry.extras]
