@@ -43,7 +43,7 @@ if __name__ == "__main__":
 
     key_im_looking_for = "foo"
     try:
-        v = {}
+        v = {"bar": 123}
         val = v[key_im_looking_for]
 
     except KeyError as ke:

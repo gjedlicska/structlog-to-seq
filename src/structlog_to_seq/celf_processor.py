@@ -1,6 +1,16 @@
+from enum import Enum
 from typing import Dict
 
 from structlog_to_seq.abs_processor import AbsProcessor
+
+
+class CelfKeywords(Enum):
+    Timestamp = "@t"
+    Message = "@m"
+    MessageTemplate = "@mt"
+    Level = "@l"
+    Exception = "@x"
+    Renderings = "@r"
 
 
 class CelfProcessor(AbsProcessor):
@@ -54,11 +64,11 @@ class CelfProcessor(AbsProcessor):
     __event_keyword = "event"
 
     __structlog_to_celf_mapper = {
-        "timestamp": "@t",
-        __event_keyword: "@mt",
-        "level": "@l",
-        "exception": "@x",
-        "renderings": "@r",
+        "timestamp": CelfKeywords.Timestamp.value,
+        __event_keyword: CelfKeywords.MessageTemplate.value,
+        "level": CelfKeywords.Level.value,
+        "exception": CelfKeywords.Exception.value,
+        "renderings": CelfKeywords.Renderings.value,
     }
 
     def _replace_reserved_keys(self, input_dict) -> Dict[str, object]:
