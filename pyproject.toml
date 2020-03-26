@@ -30,7 +30,7 @@ colorful = "^0.5.4"
 
 
 [tool.poetry.extras]
-# color = ["colorama", "colorful"]
+console = ["structlog", "colorama", "colorful"]
 
 
 [tool.black]
