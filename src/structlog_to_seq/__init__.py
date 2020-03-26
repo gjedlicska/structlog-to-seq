@@ -1,5 +1,5 @@
 from .celf_processor import CelfProcessor
-from .celf_renderer import CelfRenderer
+from .message_template_renderer import MessageTemplateRenderer
 
 
-__all__ = ["CelfProcessor", "CelfRenderer"]
+__all__ = ["CelfProcessor", "MessageTemplateRenderer"]

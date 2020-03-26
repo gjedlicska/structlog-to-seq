@@ -11,7 +11,6 @@ packages = [
 
 [tool.poetry.dependencies]
 python = "^3.6"
-colorful = "^0.5.4"
 
 
 [tool.poetry.dev-dependencies]
@@ -27,11 +26,11 @@ tox-gh-actions = "^0.3.0"
 mypy = "^0.761"
 rope = "^0.16.0"
 colorama = "^0.4.3"
+colorful = "^0.5.4"
 
 
 [tool.poetry.extras]
-colorama = ["colorama"]
-
+# color = ["colorama", "colorful"]
 
 
 [tool.black]
@@ -62,7 +61,7 @@ use_parentheses=true
 line_length=88
 lines_after_imports=2
 lines_between_types=1
-known_third_party=["pytest", "structlog", "structlog_to_seq"]
+known_third_party=["colorful", "pytest", "structlog", "structlog_to_seq"]
 
 
 [tool.coverage.run]
