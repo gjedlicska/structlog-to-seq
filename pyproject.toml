@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "structlog_to_seq"
-version = "0.2.0"
+version = "0.2.1"
 description = "A collection of structlog processors for using structlog with Seq log server"
 authors = ["Gergő Jedlicska <gergo@jedlicska.com>"]
 license = "MIT"

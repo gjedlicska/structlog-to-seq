@@ -12,4 +12,4 @@ def test_all():
 
 
 def test_version():
-    assert version("structlog_to_seq") == "0.2.0"
+    assert version("structlog_to_seq") == "0.2.1"
