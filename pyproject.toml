@@ -5,7 +5,7 @@ description = "A collection of structlog processors for using structlog with Seq
 authors = ["Gergő Jedlicska <gergo@jedlicska.com>"]
 license = "MIT"
 packages = [
-  { include= "structlog_to_seq", from = "src" }
+  { include = "structlog_to_seq", from = "src" }
 ]
 
 
@@ -28,6 +28,7 @@ rope = "^0.16.0"
 colorama = "^0.4.3"
 colorful = "^0.5.4"
 pytest-cov = "^2.8.1"
+importlib_metadata = { version = "^1.5.2", python = "<3.8"}
 
 
 [tool.poetry.extras]
