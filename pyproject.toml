@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "structlog_to_seq"
-version = "0.2.1"
+version = "0.2.2"
 description = "A collection of structlog processors for using structlog with Seq log server"
 authors = ["Gergő Jedlicska <gergo@jedlicska.com>"]
 license = "MIT"
@@ -11,12 +11,13 @@ packages = [
 
 [tool.poetry.dependencies]
 python = "^3.6"
-
+structlog = { version = "~20.1", optional = true}
+colorama = { version = "^0.4.3", optional = true}
+colorful = { version = "^0.5.4", optional = true}
 
 [tool.poetry.dev-dependencies]
 pytest = "~5"
 tox = "^3.14.3"
-structlog = "~20.1"
 coverage = {extras = ["toml"], version = "^5.0.3"}
 black = "^19.10b0"
 isort = "^4.3.21"
@@ -25,8 +26,7 @@ pre-commit = "^1.21.0"
 tox-gh-actions = "^0.3.0"
 mypy = "^0.761"
 rope = "^0.16.0"
-colorama = "^0.4.3"
-colorful = "^0.5.4"
+
 pytest-cov = "^2.8.1"
 importlib_metadata = { version = "^1.5.2", python = "<3.8"}
 
